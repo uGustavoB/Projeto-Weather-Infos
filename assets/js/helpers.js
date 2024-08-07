@@ -42,4 +42,3 @@ export const checkForErrors = (inputVal, data, cities, warningElement) => {
       </div>
     `;
   };
-  

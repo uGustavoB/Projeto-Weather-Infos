@@ -33,14 +33,26 @@ export class Weather {
           this.warning.style.display = 'none';
           this.cities.push(data);
 
-          console.log(this.cities);
-          const div = document.createElement('div');
-          this.weatherBox.insertAdjacentElement('afterbegin', div);
-          div.classList.add('weather-card');
-          div.innerHTML = createMarkup(data);
+          
+          this.renderWeatrerCards();
+          
           
           this.form.reset();
         });
     });
+  }
+  
+  renderWeatrerCards() {
+    // Limpar o conteúdo do cartão de clima anterior. Não implementei para não afetar a implementação do localStorage
+    // Se for implementar, podemos fazer com o map também
+    //this.weatherBox.innerHTML = '';
+
+    this.weatherBox.innerHTML = this.cities.map(city => {
+      const div = document.createElement('div');
+      div.classList.add('weather-card');
+      div.innerHTML = createMarkup(city);
+      return div.outerHTML;
+    })
+    .join('');
   }
 }
