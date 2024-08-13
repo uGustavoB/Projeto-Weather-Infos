@@ -33,16 +33,14 @@ export class Weather {
           this.warning.style.display = 'none';
           this.cities.push(data);
 
-          
-          this.renderWeatrerCards();
-          
+          this.renderWeatherCards();
           
           this.form.reset();
         });
     });
   }
   
-  renderWeatrerCards() {
+  renderWeatherCards() {
     // Limpar o conteúdo do cartão de clima anterior. Não implementei para não afetar a implementação do localStorage
     // Se for implementar, podemos fazer com o map também
     //this.weatherBox.innerHTML = '';
