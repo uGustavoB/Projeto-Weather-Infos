@@ -10,16 +10,15 @@
   --vinered: #CD0232;
   --darkblue: #011246;
   --blue: #2552E6;
-  --purple: #2A2B5B;
+  --purple: #450099;
   --green: #019907;
   --lightgreen: #8CE619;
   --lightbrown: #FE9B67;
   --yellow: #FFBF2A;
-  --purple: #450099;
   --pink: #ff00c8;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,33 +30,30 @@ body {
   color: var(--white);
 }
 
-.container{
-  /* height: 100vh; */
+.container {
   padding: 5% 0;
-  /* height: calc(100); */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
 
-.city-box{
+.city-box {
   background: linear-gradient(45deg, var(--purple) 0%, var(--pink) 100%);
   padding: 20px;
   border-radius: 20px;
-  /* margin-top: -25%; */
 }
 
-.city-box h1{
+.city-box h1 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-.input-box{
+.input-box {
   position: relative;
 }
 
-.input-box input{
+.input-box input {
   color: var(--white);
   background-color: rgba(0, 0, 0, 0.4);
   font-weight: 700;
@@ -70,11 +66,10 @@ body {
   height: 50px;
 }
 
-.btn-submit{
+.btn-submit {
   position: absolute;
   right: 0;
   top: 0;
-  /* z-index: 10; */
   border: none;
   background: transparent;
   outline: none;
@@ -85,22 +80,21 @@ body {
   color: var(--white);
 }
 
-.submit-warning{
+.submit-warning {
   color: var(--vinered);
-  position: relative;
   margin-top: 15px;
   font-size: 1.2rem;
   display: none;
 }
 
-.btn-geo{
+.btn-geo {
   position: absolute;
   line-height: 50px;
   left: 10px;
   font-size: 1.3rem;
 }
 
-.weather-box{
+.weather-box {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -108,10 +102,11 @@ body {
   flex-wrap: wrap;
 }
 
-.weather-card{
+.weather-card {
+  position: relative;
   color: var(--darkgray);
   background-color: var(--white);
-  width:fit-content;
+  width: fit-content;
   height: fit-content;
   margin: 0 20px;
   padding: 20px;
@@ -120,12 +115,13 @@ body {
   margin-top: 30px;
 }
 
-.weather-card h2{
+.weather-card h2 {
   font-size: 2rem;
   margin: 10px 0;
   color: var(--gray);
 }
-.weather-card h2 sup{
+
+.weather-card h2 sup {
   font-size: 1rem;
   background-color: var(--darkblue);
   color: var(--white);
@@ -133,42 +129,142 @@ body {
   border-radius: 10px;
 }
 
-.weather-card h1{
+.weather-card h1 {
   font-size: 4rem;
 }
-.weather-card h1 sup{
+
+.weather-card h1 sup {
   font-size: 2rem;
 }
 
-.weather-img{
+.weather-img {
   width: 200px;
-  /* max-width: 204px; */
 }
 
-.weather-details{
+.weather-details {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
-  margin-right: 30px;
 }
 
-.weather-details .humidity, .weather-details .wind{
+.weather-details .humidity,
+.weather-details .wind {
   display: flex;
   align-items: center;
   width: 50%;
   height: 80px;
 }
-.weather-details .humidity{
+
+.weather-details .humidity {
   justify-content: flex-start;
   padding-left: 10px;
 }
 
-.weather-details .wind{
+.weather-details .wind {
   justify-content: flex-end;
   padding-right: 10px;
 }
-.weather-details i{
+
+.weather-details i {
   font-size: 1.5rem;
   margin-right: 10px;
+}
+
+/* Estilos para o botão de favoritos */
+.btn-favorites {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--lightgray);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.5rem;
+  color: var(--blue);
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Estilos para a aba de favoritos */
+.favorites-box {
+  position: fixed;
+  top: 60px; /* Abaixo do botão de favoritos */
+  right: 20px;
+  background: var(--lightgray);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 300px;
+  max-height: 400px;
+  overflow-y: auto; /* Permite rolagem se a lista de favoritos for longa */
+  display: none; /* Inicialmente escondido, será mostrado via JavaScript */
+  transition: all 0.3s ease-in-out;
+}
+
+.favorites-box.show {
+  display: block;
+}
+
+.favorites-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--darkblue);
+  text-align: center;
+}
+
+.btn-hide-favorites {
+  border: none;
+  background: transparent;
+  color: var(--darkblue);
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.favorites-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.favorites-list ul li {
+  background: var(--white) !important;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: var(--darkgray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.favorites-list ul li:hover {
+  background: var(--lightgreen);
+}
+
+.favorites-list ul li i {
+  cursor: pointer;
+  color: var(--yellow);
+}
+
+.btn-favorite {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--gray); /* Cor inicial do ícone da estrela */
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.bi-star-fill {
+  color: var(--yellow); /* Cor da estrela preenchida */
 }
