@@ -23,7 +23,7 @@ export const createMarkup = (data) => {
   return `
     <h2>${name} <sup>${sys.country}</sup></h2>
     <h1>${Math.round(main.temp)}<sup>°C</sup></h1>
-    <img src="assets/img/${weather[0].icon}.svg" alt="" class="weather-img"><br />
+    <img src="/img/${weather[0].icon}.svg" alt="" class="weather-img"><br />
     <div class="weather-details">
       <div class="humidity">
         <i class="bi bi-water"></i>
