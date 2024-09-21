@@ -1,9 +1,22 @@
+import { motion } from 'framer-motion';
+
 export default function WeatherCard({ post }) {
 
   const { main, name, weather, wind, sys } = post;
 
   return (
-    <div className="weather-card">
+    <motion.div
+    className="weather-card"
+    initial={{ opacity: 0 , y: -50}}
+    animate={{ opacity: 1, y: 0}}
+    transition={{
+      type: 'spring',
+      bounce: 0.5,
+      duration: 0.7,
+      delayChildren: 0.5,
+      staggerChildren: 0.50
+    }}
+    >
       <h2>{name} <sup>{sys.country}</sup></h2>
       <h1>{Math.round(main.temp)}<sup>°C</sup></h1>
       <img src={`/img/${weather[0].icon}.svg`} alt="" className="weather-img" />
@@ -22,7 +35,10 @@ export default function WeatherCard({ post }) {
               <p>Velocidade</p>
             </div>
         </div>
+        <button className='btn-favorite'>
+          <i className='bi bi-star'></i>
+        </button>
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -84,7 +84,7 @@ body {
   color: var(--vinered);
   margin-top: 15px;
   font-size: 1.2rem;
-  display: none;
+  /* display: none; */
 }
 
 .btn-geo {
@@ -267,4 +267,18 @@ body {
 
 .bi-star-fill {
   color: var(--yellow); /* Cor da estrela preenchida */
+}
+
+.notification-box{
+  font-weight: 700;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--vinered);
+  color: var(--white);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-size: 16px;
 }
