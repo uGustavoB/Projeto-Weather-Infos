@@ -1,5 +1,5 @@
-// components/Favorites.js
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const Favorites = ({ favorites, removeFromFavorites, displayFavoriteCity, isVisible, toggleVisibility }) => {
   useEffect(() => {
@@ -9,22 +9,31 @@ const Favorites = ({ favorites, removeFromFavorites, displayFavoriteCity, isVisi
   if (!isVisible) return null;
 
   return (
-    <div className="favorites-box">
-      <button className="btn-hide-favorites" onClick={toggleVisibility}>
+    <motion.div
+      className="favorites-box"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{
+        type: 'spring',
+        bounce: 0.5,
+        duration: 0.7
+      }}
+    >
+      <button className="btn-hide" onClick={toggleVisibility}>
         <i className="bi bi-x-circle"></i>
       </button>
       <h2>Favoritos</h2>
       <div className="favorites-list">
         <ul>
           {favorites.map(city => (
-            <li key={city.name} data-city={city.name}>
-              <span onClick={() => displayFavoriteCity(city.name)}>{city.name}</span>
-              <i className="bi bi-star-fill" onClick={() => removeFromFavorites(city.name)}></i>
+            <li key={city} data-city={city}>
+              <span onClick={() => displayFavoriteCity(city)}>{city}</span>
+              <i className="bi bi-star-fill" onClick={() => removeFromFavorites(city)}></i>
             </li>
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export default function WeatherCard({ post }) {
+export default function WeatherCard({ post, add, remove, check, toggleFavorites }) {
 
   const { main, name, weather, wind, sys } = post;
 
@@ -36,7 +36,10 @@ export default function WeatherCard({ post }) {
             </div>
         </div>
         <button className='btn-favorite'>
-          <i className='bi bi-star'></i>
+          <i
+            className={check(name) ? 'bi bi-star-fill' : 'bi bi-star'}
+            onClick={toggleFavorites}
+          ></i>
         </button>
       </div>
     </motion.div>
