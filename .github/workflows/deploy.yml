@@ -22,6 +22,9 @@ jobs:
         run: npm install
 
       - name: Build project
+        env:
+          NEXT_PUBLIC_SUPABASE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
         run: npm run build
 
       - name: Deploy to GitHub Pages
