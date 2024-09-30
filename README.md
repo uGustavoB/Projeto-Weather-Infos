@@ -4,16 +4,16 @@
 
 Olá mundo! Bem-vindo ao nosso primeiro projeto da disciplina Linguagem de Script do curso Sistemas para Internet no Instituto Federal de Educação, Ciência e Tecnologia da Paraíba.
 
-O objetivo deste projeto é criar um site que consome a API do OpenWeather e exibe ao usuário um card com informações úteis sobre o clima atual. Além disso, o usuário pode adicionar cidades aos favoritos, que são salvas no `localStorage`, permitindo que o usuário recupere facilmente essas cidades posteriormente com apenas um clique.
+O objetivo deste projeto é criar um site que consome a API do OpenWeather e exibe ao usuário um card com informações úteis sobre o clima atual. Além disso, o usuário pode adicionar cidades aos favoritos, que são salvas no banco de dados `Supabase`, permitindo que o usuário recupere facilmente essas cidades posteriormente apenas digitando seu email.
 
-Este projeto é uma aplicação prática dos conceitos aprendidos na disciplina, utilizando a biblioteca Bootstrap Icons para a estilização dos ícones e a ferramenta de build Vite para o desenvolvimento e construção do projeto. 
+Este projeto é uma aplicação prática dos conceitos aprendidos na disciplina, utilizando a biblioteca Bootstrap Icons para a estilização dos ícones, o framework de javascript React, e o Next.js para fazer a build do projeto.
 
-Desenvolver este projeto foi uma jornada empolgante. Integrar a API do OpenWeather e criar a funcionalidade de favoritos foi um desafio estimulante que nos permitiu aplicar e aprofundar nossos conhecimentos em JavaScript e ferramentas modernas de desenvolvimento. Esperamos que a aplicação proporcione uma experiência útil e agradável para os usuários!
+Desenvolver este projeto foi uma jornada empolgante. Integrar a API do OpenWeather e criar a funcionalidade de favoritos foi um desafio estimulante que nos permitiu aplicar e aprofundar nossos conhecimentos em React, Javascript e ferramentas modernas de desenvolvimento. Esperamos que a aplicação proporcione uma experiência útil e agradável para os usuários!
 
 ## Funcionalidades
 
 - __Exibição de informações climáticas:__ O site consome a API do OpenWeather e exibe um card com informações úteis sobre o clima atual da cidade selecionada.
-- __Favoritos:__ Permite ao usuário adicionar cidades aos favoritos, que são salvas no `localStorage` e podem ser recuperadas facilmente com um clique.
+- __Favoritos:__ Permite ao usuário adicionar cidades aos favoritos, que são salvas no `Supabase` e podem ser recuperadas facilmente.
 
 ## Acesso
 
@@ -42,13 +42,16 @@ O projeto pode ser acessado através do [GitHub Pages](https://ugustavob.github.
 ## Bibliotecas utilizadas
 
 - Bootstrap Icons
-- Vite
+- React
+- Next.js
+- Axios
+- Framer Motion
 
 ## API utilizada
 
 - [OpenWeather API](https://openweathermap.org/api)
 
-## Autor
+## Autores
 
 Este projeto foi desenvolvido por:
 
